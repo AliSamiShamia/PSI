@@ -12,8 +12,8 @@ function CustomVideo() {
   const getVideoUrl = () => {
     // Example: If the screen width is less than 600px, use one video, otherwise use another
     return window.innerWidth < 600
-      ? process.env.baseURL + "/videos/background-video-1.mp4"
-      : process.env.baseURL + "/videos/background-video-2.mp4";
+      ? process.env.Video_URL + "background-video-1_wqi4w2.mp4"
+      : process.env.Video_URL + "background-video-2_fjplb0.mp4";
   };
   const handleResize = () => {
     setVideoUrl(getVideoUrl());
@@ -73,12 +73,18 @@ function CustomVideo() {
         background: `url('/static/images/dots.png')`,
       }}
     >
-      <Grid sx={{ display: { md: "block", xs: "none" } }}>{VideoRender}</Grid>
+      <Grid
+        sx={{
+          display: { md: "block", xs: "none" },
+        }}
+      >
+        {VideoRender}
+      </Grid>
       <Grid
         sx={{
           display: { md: "none", xs: "block" },
           height: 700,
-          width: "100vw",
+          width: "100%",
         }}
       >
         {VideoRender}
