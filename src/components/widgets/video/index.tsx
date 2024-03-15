@@ -12,8 +12,8 @@ function CustomVideo() {
   const getVideoUrl = () => {
     // Example: If the screen width is less than 600px, use one video, otherwise use another
     return window.innerWidth < 600
-      ? process.env.baseURL + "background-video-1.mp4"
-      : process.env.baseURL + "background-video-2.mp4";
+      ? process.env.baseURL + "/videos/background-video-1.mp4"
+      : process.env.baseURL + "/videos/background-video-2.mp4";
   };
   const handleResize = () => {
     setVideoUrl(getVideoUrl());
@@ -47,30 +47,22 @@ function CustomVideo() {
     }
   }, [hasWindow]);
   const VideoRender = (
-    <Waypoint
-      onEnter={handleEnterViewport}
-      scrollableAncestor={"window"}
-      onLeave={handleExitViewport}
-    >
-      <Grid>
-        <ReactPlayer
-          url={videoUrl}
-          pip={true}
-          muted
-          width={"100%"}
-          height={"100%"}
-          playsinline
-          config={{
-            file: {
-              attributes: {
-                preload: "auto",
-              },
-            },
-          }}
-          playing
-        />
-      </Grid>
-    </Waypoint>
+    <ReactPlayer
+      url={videoUrl}
+      pip={true}
+      muted
+      width={"100%"}
+      height={"100%"}
+      playsinline
+      config={{
+        file: {
+          attributes: {
+            preload: "auto",
+          },
+        },
+      }}
+      playing
+    />
   );
 
   return (
