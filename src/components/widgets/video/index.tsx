@@ -39,16 +39,29 @@ function CustomVideo() {
   const VideoRender = (
     <Grid position={"relative"} width={"100%"} sx={{ height: "auto" }}>
       {hasWindow && (
-        <Grid sx={{ display: { md: "flex", xs: "none" } }}>
-          <ReactPlayer
-            playing={true}
-            loop
-            // muted
-            volume={0.2}
-            width={"100%"}
-            height={"100%"}
-            url={videoUrl}
-          />
+        <Grid>
+          <Grid sx={{ display: { md: "flex", xs: "none" } }}>
+            <ReactPlayer
+              playing={true}
+              loop
+              // muted
+              volume={0.2}
+              width={"100%"}
+              height={"100%"}
+              url={process.env.baseURL + "background-video-1_wqi4w2.mp4"}
+            />
+          </Grid>
+          <Grid sx={{ display: { md: "none", xs: "flex" } }}>
+            <ReactPlayer
+              playing={true}
+              loop
+              // muted
+              volume={0.2}
+              width={"100%"}
+              height={"100%"}
+              url={process.env.baseURL + "background-video-1_wqi4w2.mp4"}
+            />
+          </Grid>
         </Grid>
       )}
     </Grid>
