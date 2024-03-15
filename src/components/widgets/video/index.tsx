@@ -97,6 +97,7 @@ function CustomVideo() {
       ><source src="${videoUrl}" type="video/mp4" ></video>`,
         }}
       />
+      {videoUrl}
     </Grid>
   );
 }
