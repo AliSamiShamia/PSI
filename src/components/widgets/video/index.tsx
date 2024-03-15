@@ -12,8 +12,8 @@ function CustomVideo() {
   const getVideoUrl = () => {
     // Example: If the screen width is less than 600px, use one video, otherwise use another
     return window.innerWidth < 600
-      ? process.env.Video_URL + "background-video-1_wqi4w2.mp4"
-      : process.env.Video_URL + "background-video-2_fjplb0.mp4";
+      ? "https://res.cloudinary.com/durehkk8l/video/upload/v1710539579/psi/background-video-1_wqi4w2.mp4"
+      : "https://res.cloudinary.com/durehkk8l/video/upload/v1710539593/psi/background-video-2_fjplb0.mp4";
   };
   const handleResize = () => {
     setVideoUrl(getVideoUrl());
@@ -97,7 +97,6 @@ function CustomVideo() {
       ><source src="${videoUrl}" type="video/mp4" ></video>`,
         }}
       />
-      {videoUrl}
     </Grid>
   );
 }
