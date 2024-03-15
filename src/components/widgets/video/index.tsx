@@ -28,8 +28,13 @@ function CustomVideo() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [hasWindow]); // Empty dependency array ensures the effect runs only once after initial mount
+  }, []); // Empty dependency array ensures the effect runs only once after initial mount
 
+  useEffect(() => {
+    if (window != undefined) {
+      setVideoUrl(getVideoUrl());
+    }
+  }, [hasWindow]);
   const VideoRender = (
     <Grid>
       {
@@ -65,9 +70,7 @@ function CustomVideo() {
       }}
     >
       <Grid sx={{ display: { md: "block", xs: "none" } }}>{VideoRender}</Grid>
-      <Grid sx={{ display: { md: "none", xs: "block" }, height: 500 }}>
-        {VideoRender}
-      </Grid>
+      <Grid sx={{ display: { md: "none", xs: "block" } }}>{VideoRender}</Grid>
     </Grid>
   );
 }
