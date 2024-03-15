@@ -78,7 +78,7 @@ function LocatedAt() {
                     sx={{
                       backgroundImage: `url('${"/static/images/mockup.png"}')`,
                       height: { md: 400, xs: 300 },
-                      width: { md: 700, xs: "100%" },
+                      width: { md: 700, xs: "100vw" },
                       backgroundSize: "100%",
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
