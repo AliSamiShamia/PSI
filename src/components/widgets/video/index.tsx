@@ -12,8 +12,8 @@ function CustomVideo() {
   const getVideoUrl = () => {
     // Example: If the screen width is less than 600px, use one video, otherwise use another
     return window.innerWidth < 600
-      ? process.env.Video_URL + "6da01eda43abc8e6944039d6f97736a8"
-      : process.env.Video_URL + "238900bdc6801ddc33c68d6355a4c703";
+      ? process.env.baseURL + "background-video-1.mp4"
+      : process.env.baseURL + "background-video-2.mp4";
   };
   const handleResize = () => {
     setVideoUrl(getVideoUrl());
