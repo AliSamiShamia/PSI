@@ -93,9 +93,8 @@ function CustomVideo() {
         muted="true"
         autoplay="true"
         playsinline="true"
-        src="${videoUrl}"
-        type="video/mp4" 
-      />`,
+        
+      ><source src="${videoUrl}" type="video/mp4" ></video>`,
         }}
       />
     </Grid>
