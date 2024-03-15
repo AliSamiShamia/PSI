@@ -11,7 +11,7 @@ function CustomVideo() {
   const getVideoUrl = () => {
     // Example: If the screen width is less than 600px, use one video, otherwise use another
     return window.innerWidth < 600
-      ? process.env.baseURL + "background-video-1_wqi4w2.mp4"
+      ? process.env.Video_URL + "background-video-1_wqi4w2.mp4"
       : process.env.Video_URL + "background-video-2_fjplb0.mp4";
   };
   const handleResize = () => {
@@ -28,42 +28,31 @@ function CustomVideo() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [videoUrl]); // Empty dependency array ensures the effect runs only once after initial mount
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setHasWindow(true);
-    }
-  }, [window]); // Empty dependency array ensures the effect runs only once after initial mount
+  }, [hasWindow]); // Empty dependency array ensures the effect runs only once after initial mount
 
   const VideoRender = (
-    <Grid position={"relative"} width={"100%"} sx={{ height: "auto" }}>
-      {hasWindow && (
+    <Grid>
+      {
         <Grid>
-          <Grid sx={{ display: { md: "flex", xs: "none" } }}>
-            <ReactPlayer
-              playing={true}
-              loop
-              // muted
-              volume={0.2}
-              width={"100%"}
-              height={"100%"}
-              url={process.env.baseURL + "background-video-1_wqi4w2.mp4"}
-            />
-          </Grid>
-          <Grid sx={{ display: { md: "none", xs: "flex" } }}>
-            <ReactPlayer
-              playing={true}
-              loop
-              // muted
-              volume={0.2}
-              width={"100%"}
-              height={"100%"}
-              url={process.env.baseURL + "background-video-1_wqi4w2.mp4"}
-            />
-          </Grid>
+          <ReactPlayer
+            url={videoUrl}
+            pip={true}
+            // controls
+            muted
+            width={"100%"}
+            height={"100%"}
+            playsinline
+            config={{
+              file: {
+                attributes: {
+                  preload: "auto",
+                },
+              },
+            }}
+            playing
+          />
         </Grid>
-      )}
+      }
     </Grid>
   );
 
@@ -75,20 +64,7 @@ function CustomVideo() {
         background: `url('/static/images/dots.png')`,
       }}
     >
-      <Grid
-        sx={{
-          position: "absolute",
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0,
-          backgroundColor: "#00000055",
-          zIndex: 10,
-        }}
-      ></Grid>
-      <Grid sx={{ display: { md: "block", xs: "none" } }}>
-        <Parallax scale={[1.1, 0.9]}>{VideoRender}</Parallax>
-      </Grid>
+      <Grid sx={{ display: { md: "block", xs: "none" } }}>{VideoRender}</Grid>
       <Grid sx={{ display: { md: "none", xs: "block" }, height: 500 }}>
         {VideoRender}
       </Grid>
