@@ -90,7 +90,23 @@ function CustomVideo() {
           width: "100vw",
         }}
       >
-        {VideoRender}
+        <ReactPlayer
+          url={process.env.Video_URL + "background-video-1_wqi4w2.mp4"}
+          pip={true}
+          controls
+          muted
+          width={"100%"}
+          height={"100%"}
+          playsinline
+          config={{
+            file: {
+              attributes: {
+                preload: "auto",
+              },
+            },
+          }}
+          playing
+        />
       </Grid>
     </Grid>
   );
