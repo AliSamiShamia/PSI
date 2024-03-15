@@ -6,6 +6,7 @@ import SpinnerCustomize from "@/components/widgets/spinner";
 import Footer from "../footer";
 import ResponsiveAppBar from "../header";
 import { Providers } from "@/components/providers";
+import { Colors } from "@/components/constant";
 
 const Grid = lazy(() => import("@mui/material/Grid"));
 const Container = lazy(() => import("@mui/material/Container"));
@@ -74,8 +75,14 @@ export default function Layout({
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PSI - Landing Page</title>
+        <title>The Sapphire - Landing Page</title>
+        <meta
+          name="description"
+          content="Discover The Sapphire, an architectural masterpiece by DAMAC Properties and de GRISOGONO, located along Sheikh Zayed Road. Inspired by yellow sapphires, it offers exquisitely crafted apartments, penthouses, and full floors."
+        />
 
+        <meta name="author" content="Ali Shamia" />
+        <meta name="theme-color" content={Colors.primary} />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
