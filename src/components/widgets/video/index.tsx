@@ -11,8 +11,8 @@ function CustomVideo() {
   const getVideoUrl = () => {
     // Example: If the screen width is less than 600px, use one video, otherwise use another
     return window.innerWidth < 600
-      ? process.env.baseURL + "videos/background-video-1.mp4"
-      : process.env.baseURL + "videos/background-video-2.mp4";
+      ? process.env.baseURL + "background-video-1_wqi4w2.mp4"
+      : process.env.Video_URL + "background-video-2_fjplb0.mp4";
   };
   const handleResize = () => {
     setVideoUrl(getVideoUrl());
@@ -34,16 +34,12 @@ function CustomVideo() {
     if (typeof window !== undefined) {
       setHasWindow(true);
     }
-  }, [videoUrl]); // Empty dependency array ensures the effect runs only once after initial mount
+  }, [window]); // Empty dependency array ensures the effect runs only once after initial mount
 
   const VideoRender = (
     <Grid position={"relative"} width={"100%"} sx={{ height: "auto" }}>
-      {
-        // <video width="100%" height="100%" autoPlay>
-        //   <source src={videoUrl} type="video/mp4" />
-        //   Your browser does not support the video tag.
-        // </video>
-        hasWindow && (
+      {hasWindow && (
+        <Grid sx={{ display: { md: "flex", xs: "none" } }}>
           <ReactPlayer
             playing={true}
             loop
@@ -53,8 +49,8 @@ function CustomVideo() {
             height={"100%"}
             url={videoUrl}
           />
-        )
-      }
+        </Grid>
+      )}
     </Grid>
   );
 
