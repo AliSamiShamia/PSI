@@ -89,12 +89,10 @@ function CustomVideo() {
         }}
         dangerouslySetInnerHTML={{
           __html: ` <video
-        loop="true"
-        muted="true"
-        autoplay="true"
-        playsinline="true"
+          src={mp4} autoPlay="autoplay" playsInLine="playsinline" loop="true" muted="true"
         src="${videoUrl}"
-      />,`,
+        type="video/mp4" 
+      />`,
         }}
       />
     </Grid>
