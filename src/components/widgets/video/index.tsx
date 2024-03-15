@@ -87,9 +87,16 @@ function CustomVideo() {
           height: 700,
           width: "100%",
         }}
-      >
-        {VideoRender}
-      </Grid>
+        dangerouslySetInnerHTML={{
+          __html: ` <video
+        loop
+        muted
+        autoplay
+        playsinline
+        src="${videoUrl}"
+      />,`,
+        }}
+      />
     </Grid>
   );
 }
