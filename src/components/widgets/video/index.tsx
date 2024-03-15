@@ -12,8 +12,8 @@ function CustomVideo() {
   const getVideoUrl = () => {
     // Example: If the screen width is less than 600px, use one video, otherwise use another
     return window.innerWidth < 600
-      ? process.env.Video_URL + "background-video-1_wqi4w2.mp4"
-      : process.env.Video_URL + "background-video-2_fjplb0.mp4";
+      ? process.env.Video_URL + "6da01eda43abc8e6944039d6f97736a8"
+      : process.env.Video_URL + "238900bdc6801ddc33c68d6355a4c703";
   };
   const handleResize = () => {
     setVideoUrl(getVideoUrl());
@@ -56,7 +56,6 @@ function CustomVideo() {
         <ReactPlayer
           url={videoUrl}
           pip={true}
-          controls
           muted
           width={"100%"}
           height={"100%"}
@@ -90,24 +89,7 @@ function CustomVideo() {
           width: "100vw",
         }}
       >
-        <ReactPlayer
-          url={process.env.Video_URL + "background-video-1_wqi4w2.mp4"}
-          pip={true}
-          
-          muted
-          width={"100%"}
-          height={"100%"}
-          playsinline
-          config={{
-            file: {
-              attributes: {
-                preload: "auto",
-              },
-            },
-          }}
-          playing
-        />
-        {process.env.Video_URL + "background-video-1_wqi4w2.mp4"}
+        {VideoRender}
       </Grid>
     </Grid>
   );
