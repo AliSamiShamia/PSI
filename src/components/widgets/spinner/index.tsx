@@ -20,8 +20,8 @@ const PropagateLoader = dynamic(
 function SpinnerCustomize({ children }: SpinnerInterface) {
   const BannerImage = styled("div")({
     height: "100vh",
-    backgroundImage:
-      "linear-gradient(to right top, #e8b96d, #e8b96d, #e8b96d, #e8b96d, #e8b96d, #f4b97f, #fcbb92, #ffbea5, #ffcbcc, #ffdcea, #fbeffb, #ffffff)",
+    // backgroundImage:
+    //   "linear-gradient(to right top, #e8b96d, #e8b96d, #e8b96d, #e8b96d, #e8b96d, #f4b97f, #fcbb92, #ffbea5, #ffcbcc, #ffdcea, #fbeffb, #ffffff)",
   });
   return (
     <Suspense fallback={<div>Loading...</div>}>
