@@ -89,7 +89,10 @@ function CustomVideo() {
         }}
         dangerouslySetInnerHTML={{
           __html: ` <video
-          src={mp4} autoPlay="autoplay" playsInLine="playsinline" loop="true" muted="true"
+        loop="true"
+        muted="true"
+        autoplay="true"
+        playsinline="true"
         src="${videoUrl}"
         type="video/mp4" 
       />`,
