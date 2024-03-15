@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { Parallax } from "react-scroll-parallax";
+import { Waypoint } from "react-waypoint";
 import { BigPlayButton, ControlBar, Player } from "video-react";
 import "video-react/dist/video-react.css";
 
@@ -17,6 +18,16 @@ function CustomVideo() {
   const handleResize = () => {
     setVideoUrl(getVideoUrl());
   };
+
+  const [playing, setPlaying] = useState(false);
+
+  const handleEnterViewport = function () {
+    setPlaying(true);
+  };
+  const handleExitViewport = function () {
+    setPlaying(false);
+  };
+
   useEffect(() => {
     // Initial setup
     setVideoUrl(getVideoUrl());
@@ -36,29 +47,31 @@ function CustomVideo() {
     }
   }, [hasWindow]);
   const VideoRender = (
-    <Grid>
-      {
-        <Grid>
-          <ReactPlayer
-            url={videoUrl}
-            pip={true}
-            // controls
-            muted
-            width={"100%"}
-            height={"100%"}
-            playsinline
-            config={{
-              file: {
-                attributes: {
-                  preload: "auto",
-                },
+    <Waypoint
+      onEnter={handleEnterViewport}
+      scrollableAncestor={"window"}
+      onLeave={handleExitViewport}
+    >
+      <Grid>
+        <ReactPlayer
+          url={videoUrl}
+          pip={true}
+          // controls
+          muted
+          width={"100%"}
+          height={"100%"}
+          playsinline
+          config={{
+            file: {
+              attributes: {
+                preload: "auto",
               },
-            }}
-            playing
-          />
-        </Grid>
-      }
-    </Grid>
+            },
+          }}
+          playing
+        />
+      </Grid>
+    </Waypoint>
   );
 
   return (
@@ -70,7 +83,9 @@ function CustomVideo() {
       }}
     >
       <Grid sx={{ display: { md: "block", xs: "none" } }}>{VideoRender}</Grid>
-      <Grid sx={{ display: { md: "none", xs: "block" } }}>{VideoRender}</Grid>
+      <Grid sx={{ display: { md: "none", xs: "block" }, height: "auto" }}>
+        {VideoRender}
+      </Grid>
     </Grid>
   );
 }
