@@ -83,7 +83,7 @@ function CustomVideo() {
       }}
     >
       <Grid sx={{ display: { md: "block", xs: "none" } }}>{VideoRender}</Grid>
-      <Grid sx={{ display: { md: "none", xs: "block" }, height: "auto" }}>
+      <Grid sx={{ display: { md: "none", xs: "block" }, height: 700 }}>
         {VideoRender}
       </Grid>
     </Grid>
