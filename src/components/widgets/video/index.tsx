@@ -56,7 +56,7 @@ function CustomVideo() {
         <ReactPlayer
           url={videoUrl}
           pip={true}
-          // controls
+          controls
           muted
           width={"100%"}
           height={"100%"}
@@ -83,7 +83,13 @@ function CustomVideo() {
       }}
     >
       <Grid sx={{ display: { md: "block", xs: "none" } }}>{VideoRender}</Grid>
-      <Grid sx={{ display: { md: "none", xs: "block" }, height: 700 }}>
+      <Grid
+        sx={{
+          display: { md: "none", xs: "block" },
+          height: 700,
+          width: "100vw",
+        }}
+      >
         {VideoRender}
       </Grid>
     </Grid>
