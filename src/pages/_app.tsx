@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Suspense
       fallback={
-        <Spinner loading={true} width={100} height={100} children={undefined} />
+        <Spinner loading={true} width={100} height={100}  />
       }
     >
       <ThemeProvider theme={customTheme}>

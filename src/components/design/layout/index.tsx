@@ -56,12 +56,7 @@ const LoadingSection = (
     alignItems={"center"}
     justifyContent={"center"}
   >
-    <SpinnerCustomize
-      loading={false}
-      width={100}
-      height={100}
-      children={undefined}
-    />
+    <SpinnerCustomize loading={false} width={100} height={100} />
   </Grid>
 );
 

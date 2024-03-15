@@ -65,6 +65,7 @@ export default function CustomCarousel({
           {dots.map((item: any, key: number) => {
             return (
               <li
+                key={key}
                 style={{
                   backgroundColor: Colors.secondary,
                   width: 10,

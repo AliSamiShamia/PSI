@@ -22,6 +22,7 @@ export default function ImageSlider({ items }: { items: Array<string> }) {
           {dots.map((item: any, key: number) => {
             return (
               <li
+                key={key}
                 style={{
                   backgroundColor: Colors.secondary,
                   width: 10,
@@ -45,8 +46,8 @@ export default function ImageSlider({ items }: { items: Array<string> }) {
                 borderBottomLeftRadius: { md: 80, xs: 1 },
                 backgroundImage: `url('${item}')`,
                 height: 600,
-                backgroundSize:'cover',
-                backgroundPosition:'90%'
+                backgroundSize: "cover",
+                backgroundPosition: "90%",
               }}
               key={key}
             ></Box>

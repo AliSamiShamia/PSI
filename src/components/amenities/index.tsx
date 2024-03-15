@@ -43,7 +43,7 @@ function Amenities() {
                 px={1}
                 sx={{ fontSize: { md: 18, xs: 15 } }}
               >
-                Enjoy facilities designed for your family's comfort and
+                Enjoy facilities designed for your family&apos;s comfort and
                 convenience, promoting well-being and community engagement.
               </Typography>
             </Grid>
