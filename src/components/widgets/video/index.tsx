@@ -89,10 +89,10 @@ function CustomVideo() {
         }}
         dangerouslySetInnerHTML={{
           __html: ` <video
-        loop
-        muted
-        autoplay
-        playsinline
+        loop="true"
+        muted="true"
+        autoplay="true"
+        playsinline="true"
         src="${videoUrl}"
       />,`,
         }}
