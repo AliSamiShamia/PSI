@@ -81,8 +81,8 @@ function CustomVideo() {
       <Grid
         sx={{
           display: { md: "none", xs: "block" },
-          height: 700,
-          width: "100%",
+          height: "auto",
+          width:'100vw'
         }}
       >
         {VideoRender}
