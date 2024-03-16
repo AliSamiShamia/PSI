@@ -34,6 +34,12 @@ const pages = [
     title: "gallery",
     url: "/gallery",
   },
+  {
+    
+    title: "contact",
+    url: "/contact",
+    
+  }
 ];
 
 const schema = {

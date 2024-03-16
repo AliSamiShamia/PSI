@@ -1,6 +1,7 @@
 import Amenities from "@/components/amenities";
 import Appartment from "@/components/apartment";
 import BuildView from "@/components/build-view";
+import ContactForm from "@/components/contact";
 import Banner from "@/components/design/banner";
 import Layout from "@/components/design/layout";
 import Floor from "@/components/floor";
@@ -9,7 +10,7 @@ import LocatedAt from "@/components/located";
 import Categories from "@/components/widgets/category";
 import Spinner from "@/components/widgets/spinner";
 import CustomVideo from "@/components/widgets/video";
-import { Box, Grid } from "@mui/material";
+import { Box, Divider, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -55,7 +56,18 @@ export default function Home() {
           <Grid id={"gallery"}>
             <Gallery />
           </Grid>
+          <Grid
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Divider sx={{ width: { md: 600, xs: "100%" } }} />
+          </Grid>
+          <Grid id={"contact"}>
+            <ContactForm />
+          </Grid>
         </Grid>
+
         <Grid id={"build-view"}>
           <BuildView />
         </Grid>
