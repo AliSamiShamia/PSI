@@ -1,9 +1,6 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import { Parallax } from "react-scroll-parallax";
-import { Waypoint } from "react-waypoint";
-import { BigPlayButton, ControlBar, Player } from "video-react";
 import "video-react/dist/video-react.css";
 
 function CustomVideo() {
@@ -12,8 +9,8 @@ function CustomVideo() {
   const getVideoUrl = () => {
     // Example: If the screen width is less than 600px, use one video, otherwise use another
     return window.innerWidth < 600
-      ? "https://res.cloudinary.com/durehkk8l/video/upload/v1710539579/psi/background-video-1_wqi4w2.mp4"
-      : "https://res.cloudinary.com/durehkk8l/video/upload/v1710539593/psi/background-video-2_fjplb0.mp4";
+      ? "https://res.cloudinary.com/durehkk8l/video/upload/v1710548948/background-video-1_jvdnme.mp4"
+      : "https://res.cloudinary.com/durehkk8l/video/upload/v1710548140/background-video-2_wwmhdo.mp4";
   };
   const handleResize = () => {
     setVideoUrl(getVideoUrl());
@@ -87,17 +84,9 @@ function CustomVideo() {
           height: 700,
           width: "100%",
         }}
-        dangerouslySetInnerHTML={{
-          __html: ` <video
-        loop="true"
-        muted="true"
-        autoplay="true"
-        playsinline="true"
-        
-      ><source src="${videoUrl}" type="video/mp4" ></video>`,
-        }}
-      />
-      {videoUrl}
+      >
+        {VideoRender}
+      </Grid>
     </Grid>
   );
 }

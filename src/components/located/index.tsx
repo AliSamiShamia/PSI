@@ -17,6 +17,8 @@ const items = [
   "Parking",
   "100% Power Back-up in Common Area",
 ];
+import { Waypoint } from "react-waypoint";
+
 function LocatedAt() {
   return (
     <Grid
@@ -72,6 +74,7 @@ function LocatedAt() {
               justifyContent={"center"}
               alignItems={"center"}
             >
+              
               <Parallax scale={[0.7, 1.4]}>
                 <Grid>
                   <Box

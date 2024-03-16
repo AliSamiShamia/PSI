@@ -75,7 +75,8 @@ function CustomMenu({ page, active, keys, hide }: MenuInterface) {
               key={key1}
               sx={{}}
               onClick={() => {
-                router.push(menuItem.url, undefined, { shallow: true });
+                jumpToRelevantDiv(page.title);
+
               }}
             >
               {menuItem.title}

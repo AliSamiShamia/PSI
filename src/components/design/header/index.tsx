@@ -65,8 +65,8 @@ function ResponsiveAppBar({ active, pages }: HeaderInterface) {
       sx={{
         backgroundColor: {
           md: "transparent",
-          sm: "#00000033",
-          xs: "#00000033",
+          sm: "#ffffff55",
+          xs: "#ffffff55",
         },
       }}
       elevation={0}
