@@ -58,6 +58,7 @@ const ContactForm = () => {
             display={"flex"}
             justifyContent={"center"}
             flexDirection={"column"}
+            sx={{ textAlign: { md: "left", xs: "center" } }}
             //   alignItems={"center"}
             gap={2}
           >
@@ -90,6 +91,8 @@ const ContactForm = () => {
             display={"flex"}
             gap={3}
             flexDirection={"column"}
+            sx={{ textAlign: { md: "left", xs: "center" } }}
+            mx={3}
           >
             <Grid>
               <Typography variant="h4" color={"primary"} fontWeight={"bold"}>
