@@ -50,7 +50,7 @@ const ContactForm = () => {
         alignItems={"center"}
         py={5}
       >
-        <Grid container spacing={2} maxWidth={"lg"} alignItems="center">
+        <Grid container  maxWidth={"lg"} alignItems="center">
           <Grid
             item
             md={7}
@@ -92,7 +92,7 @@ const ContactForm = () => {
             gap={3}
             flexDirection={"column"}
             sx={{ textAlign: { md: "left", xs: "center" } }}
-            mx={3}
+            px={3}
           >
             <Grid>
               <Typography variant="h4" color={"primary"} fontWeight={"bold"}>
